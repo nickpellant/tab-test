@@ -4,6 +4,9 @@
 
 This project is a technical demonstration provided for [The App Business](http://theappbusiness.com).
 
+## Improvements and Refactors
+* Given additional time I would choose to refactor out the body encryption and the password authentication from the note model into seperate service objects to cleanup the controller.
+
 ## Testing
 
 This project uses [RSpec](https://relishapp.com/rspec) as its testing framework.
