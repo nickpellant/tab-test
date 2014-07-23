@@ -9,8 +9,9 @@ group :development, :test do
 end
 
 group :test do
-  gem 'shoulda-matchers', '~> 2.6.2'
   gem 'fabrication', '~> 2.11.3'
+  gem 'faker', '~> 1.4.2'
+  gem 'shoulda-matchers', '~> 2.6.2'
 end
 
 gem 'spring', :group => :development

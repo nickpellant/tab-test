@@ -32,6 +32,8 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     fabrication (2.11.3)
+    faker (1.4.2)
+      i18n (~> 0.5)
     hike (1.2.3)
     i18n (0.6.11)
     json (1.8.1)
@@ -107,6 +109,7 @@ PLATFORMS
 
 DEPENDENCIES
   fabrication (~> 2.11.3)
+  faker (~> 1.4.2)
   rails (= 4.1.4)
   rails-api
   rspec-rails (~> 3.0.2)
