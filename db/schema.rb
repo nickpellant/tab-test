@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140723132022) do
+ActiveRecord::Schema.define(version: 20140723143810) do
 
   create_table "notes", force: true do |t|
     t.string   "title"
-    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_hash"
     t.string   "password_salt"
+    t.text     "encrypted_body"
   end
 
 end

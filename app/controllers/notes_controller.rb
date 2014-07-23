@@ -11,8 +11,14 @@ class NotesController < ApplicationController
 
   def show
     @note = Note.find(params[:id])
+    password_hash = BCrypt::Engine.hash_secret(params[:password], @note.password_salt)
 
-    show_ok
+    if @note.password_hash == password_hash
+      @note.password = params[:password]
+      show_ok
+    else
+      show_not_found
+    end
   rescue ActiveRecord::RecordNotFound
     show_not_found
   end
