@@ -3,19 +3,22 @@ require 'rails_helper'
 RSpec.describe NotesController, type: :controller do
   let(:note_attributes) { Fabricate.attributes_for(:note) }
   let(:note_attribute_keys) { %i(title body) }
-  let(:note_params) { { note: note_attributes.slice(*note_attribute_keys) } }
+  let(:note_params) { note_attributes.slice(*note_attribute_keys) }
+  let(:note_params_with_password) do
+    note_params.merge(password: note_attributes[:password])
+  end
 
   describe 'POST create' do
     context 'when passed valid params' do
       let(:assigned_note) { assigns(:note) }
 
       before(:each) do
-        post :create, note_params
+        post :create, note: note_params_with_password
       end
 
       it { expect(assigned_note).to be_kind_of(Note) }
       it { is_expected.to respond_with(201) }
-      it { expect(Note.where(note_attributes)).to exist }
+      it { expect(Note.where(note_params)).to exist }
     end
 
     context 'when passed unprocessable params' do
@@ -23,12 +26,12 @@ RSpec.describe NotesController, type: :controller do
       let(:assigned_note) { assigns(:note) }
 
       before(:each) do
-        post :create, note_params
+        post :create, note: note_params_with_password
       end
 
       it { is_expected.to respond_with(422) }
       it { expect(assigned_note).to be_a_new(Note) }
-      it { expect(Note.where(note_attributes)).to_not exist }
+      it { expect(Note.where(note_params)).to_not exist }
     end
   end
 

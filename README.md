@@ -8,6 +8,10 @@ This project is a technical demonstration provided for [The App Business](http:/
 
 This project uses [RSpec](https://relishapp.com/rspec) as its testing framework.
 
+## Security
+
+Although I am aware of `has_secure_password` as documented [here](http://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html#method-i-has_secure_password) I decided to implement the password through BCrypt by hand to demo my understanding of it.
+
 ## Database
 
 ### Caveats & Comments

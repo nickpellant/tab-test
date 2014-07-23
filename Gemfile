@@ -5,6 +5,7 @@ gem 'rails', '4.1.4'
 gem 'rails-api'
 
 gem 'active_model_serializers', '~> 0.8.1'
+gem 'bcrypt-ruby', '~> 3.1.5'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.2'
