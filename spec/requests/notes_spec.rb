@@ -31,4 +31,33 @@ RSpec.describe 'Notes API', type: :request do
       end
     end
   end
+
+  describe 'GET /notes/:id' do
+    context 'when passed a valid record id' do
+      let(:note) { Fabricate(:note, note_attributes) }
+      let(:note_serializer) { NoteSerializer.new(note) }
+
+      before(:each) do
+        get "/notes/#{note.id}"
+      end
+
+      it 'returns the requested note' do
+        expect(response.status).to eq(200)
+
+        expect(response.body).to eql(note_serializer.to_json)
+      end
+    end
+
+    context 'when passed an invalid record id' do
+      before(:each) do
+        get '/notes/1'
+      end
+
+      it 'returns the requested note' do
+        expect(response.status).to eq(404)
+
+        expect(response.body).to eql('{}')
+      end
+    end
+  end
 end

@@ -9,12 +9,28 @@ class NotesController < ApplicationController
     end
   end
 
+  def show
+    @note = Note.find(params[:id])
+
+    show_ok
+  rescue ActiveRecord::RecordNotFound
+    show_not_found
+  end
+
   def create_created
     render json: @note, status: :created
   end
 
   def create_unprocessable_entity
     render json: @note, status: :unprocessable_entity
+  end
+
+  def show_ok
+    render json: @note, status: :ok
+  end
+
+  def show_not_found
+    render json: {}, status: :not_found
   end
 
 private

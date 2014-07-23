@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :notes, only: [:create]
+  resources :notes, only: [:create, :show]
 end

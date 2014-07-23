@@ -31,4 +31,30 @@ RSpec.describe NotesController, type: :controller do
       it { expect(Note.where(note_attributes)).to_not exist }
     end
   end
+
+  describe 'GET show' do
+    context 'when passed a valid record id' do
+      let(:note) { Fabricate(:note, note_attributes) }
+
+      let(:assigned_note) { assigns(:note) }
+
+      before(:each) do
+        get :show, id: note.id
+      end
+
+      it { expect(assigned_note).to be_kind_of(Note) }
+      it { expect(assigned_note).to eql(note) }
+      it { is_expected.to respond_with(200) }
+    end
+
+    context 'when passed an invalid record id' do
+      let(:assigned_note) { assigns(:note) }
+
+      before(:each) do
+        get :show, id: 1
+      end
+
+      it { is_expected.to respond_with(404) }
+    end
+  end
 end
