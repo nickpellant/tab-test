@@ -4,6 +4,10 @@ gem 'rails', '4.1.4'
 
 gem 'rails-api'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.2'
+end
+
 gem 'spring', :group => :development
 
 gem 'sqlite3'
