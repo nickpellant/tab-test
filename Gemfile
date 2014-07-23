@@ -8,6 +8,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.2'
 end
 
+group :test do
+  gem 'shoulda-matchers', '~> 2.6.2'
+end
+
 gem 'spring', :group => :development
 
 gem 'sqlite3'
