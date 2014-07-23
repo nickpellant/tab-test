@@ -15,6 +15,7 @@ group :test do
   gem 'fabrication', '~> 2.11.3'
   gem 'faker', '~> 1.4.2'
   gem 'shoulda-matchers', '~> 2.6.2'
+  gem 'coveralls', require: false
 end
 
 gem 'spring', :group => :development
