@@ -1,6 +1,6 @@
 # TAB Ruby Technical Test
 
-[![Build Status](https://travis-ci.org/nickpellant/tab-test.svg?branch=master)](https://travis-ci.org/nickpellant/tab-test) [![Coverage Status](https://img.shields.io/coveralls/nickpellant/tab-test.svg)](https://coveralls.io/r/nickpellant/tab-test)
+[![Build Status](https://travis-ci.org/nickpellant/tab-test.svg?branch=master)](https://travis-ci.org/nickpellant/tab-test) [![Coverage Status](https://img.shields.io/coveralls/nickpellant/tab-test.svg)](https://coveralls.io/r/nickpellant/tab-test) [![Code Climate](https://codeclimate.com/github/nickpellant/tab-test.png)](https://codeclimate.com/github/nickpellant/tab-test)
 
 This project is a technical demonstration provided for [The App Business](http://theappbusiness.com).
 
