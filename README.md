@@ -1,5 +1,7 @@
 # TAB Ruby Technical Test
 
+[![Build Status](https://travis-ci.org/nickpellant/tab-test.svg?branch=master)](https://travis-ci.org/nickpellant/tab-test)
+
 This project is a technical demonstration provided for [The App Business](http://theappbusiness.com).
 
 ## Testing
