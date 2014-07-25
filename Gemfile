@@ -16,6 +16,7 @@ group :test do
   gem 'faker', '~> 1.4.2'
   gem 'shoulda-matchers', '~> 2.6.2'
   gem 'coveralls', require: false
+  gem 'codeclimate-test-reporter', require: nil
 end
 
 gem 'spring', :group => :development
