@@ -2,9 +2,9 @@ require 'bcrypt'
 
 class Note < ActiveRecord::Base
   attr_accessor :password, :body
-  before_save :encrypt_password
+  before_validation :encrypt_password
 
-  validates :title, :encrypted_body, :password, presence: true
+  validates :title, :encrypted_body, :password_hash, presence: true
 
   private
 
