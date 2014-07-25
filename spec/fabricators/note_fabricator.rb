@@ -7,3 +7,11 @@ Fabricator(:note) do
     BCrypt::Engine.hash_secret(attrs[:password], attrs[:password_salt])
   end
 end
+
+Fabricator(:note_with_encrypted_body, from: :note) do
+  encrypted_body do |attrs|
+    secret = OpenSSL::Digest::SHA256.new(attrs[:password]).digest
+    message_encryptor = ActiveSupport::MessageEncryptor.new(secret)
+    message_encryptor.encrypt_and_sign(attrs[:body])
+  end
+end

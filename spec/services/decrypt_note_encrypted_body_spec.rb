@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe DecryptNoteEncryptedBody, type: :service do
-  let!(:note)               { Fabricate(:note) }
+  let!(:note)               { Fabricate(:note_with_encrypted_body) }
   let!(:note_body)          { note.body }
   let(:note_encrypted_body) { note.encrypted_body }
   let(:note_password)       { note.password }

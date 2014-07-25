@@ -40,7 +40,7 @@ RSpec.describe 'Notes API', type: :request do
 
   describe 'GET /notes/:id' do
     context 'when passed a valid record id' do
-      let(:note) { Fabricate(:note, note_attributes) }
+      let(:note) { Fabricate(:note_with_encrypted_body, note_attributes) }
       let(:note_serializer) { NoteSerializer.new(note) }
 
       before(:each) do
@@ -67,7 +67,7 @@ RSpec.describe 'Notes API', type: :request do
     end
 
     context 'when passed an invalid password' do
-      let(:note) { Fabricate(:note, note_attributes) }
+      let(:note) { Fabricate(:note_with_encrypted_body, note_attributes) }
       let(:note_serializer) { NoteSerializer.new(note) }
 
       before(:each) do

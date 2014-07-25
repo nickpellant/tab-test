@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe AuthenticateNotePassword, type: :service do
-  let(:note)               { Fabricate(:note) }
+  let(:note)               { Fabricate(:note_with_encrypted_body) }
   let(:note_password)      { note.password }
   let(:note_password_hash) { note.password_hash }
 
