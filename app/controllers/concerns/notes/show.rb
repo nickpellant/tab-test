@@ -8,7 +8,11 @@ module Notes::Show
     )
 
     if note_password_authenticated
-      @note.password = params[:password]
+      @note = DecryptNoteEncryptedBody.call(
+        note: @note,
+        given_password: params[:password]
+      )
+
       show_ok
     else
       show_not_found
