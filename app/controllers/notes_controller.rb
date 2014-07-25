@@ -12,7 +12,12 @@ class NotesController < ApplicationController
   def show
     @note = Note.find(params[:id])
 
-    if NoteAuthenticationService.authenticate(@note, params[:password])
+    note_password_authenticated = AuthenticateNotePassword.call(
+      note: @note,
+      given_password: params[:password]
+    )
+
+    if note_password_authenticated
       @note.password = params[:password]
       show_ok
     else
