@@ -2,6 +2,7 @@ module Notes::Create
   def create
     @note = Note.new(note_params)
     @note = EncryptNoteBody.call(note: @note)
+    @note = EncryptNotePassword.call(note: @note)
 
     if @note.save
       create_created
